@@ -1,0 +1,33 @@
+$TTL 300
+$ORIGIN sun.galaxy.
+
+@  1D  IN  SOA sun.galaxy. god.sun.galaxy. (
+  1; serial
+  3H; refresh interval
+  1m; retry 
+  10m; expiry period
+  5m; negative TTL
+)
+
+@    IN  NS  ns1.sun.galaxy.
+     IN  NS  ns2.sun.galaxy.
+
+@       IN  A  192.168.50.100
+
+ns1    IN  A   192.168.50.110
+ns2    IN  A   192.168.50.111
+
+earth    IN  A  192.168.50.100
+mars    IN  A  192.168.50.102
+
+; venus and soyuz are not external entities, skip them
+
+moon    IN  CNAME  earth
+
+
+
+
+
+
+
+

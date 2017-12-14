@@ -1,0 +1,25 @@
+$TTL 300
+$ORIGIN 20.172.in-addr.arpa.
+
+@  1D  IN  SOA sun.galaxy. god.sun.galaxy. (
+  1; serial
+  3H; refresh interval
+  1m; retry 
+  10m; expiry period
+  5m; negative TTL
+)
+
+; Name servers for the zone - both out-of-zone - no A RRs required
+@       IN  NS    ns1.sun.galaxy.
+@       IN  NS    ns2.sun.galaxy.
+
+20.0     IN  PTR    sun.galaxy.
+20.0     IN  PTR    earth.sun.galaxy.
+20.0     IN  PTR    moon.sun.galaxy.
+
+110.0    IN  PTR    ns1.sun.galaxy.
+111.0    IN  PTR    ns2.sun.galaxy.
+
+22.0    IN  PTR    mars.sun.galaxy.
+24.0    IN  PTR    venus.sun.galaxy.
+26.0    IN  PTR    souyz.sun.galaxy.

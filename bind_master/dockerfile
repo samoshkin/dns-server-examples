@@ -1,0 +1,10 @@
+FROM resystit/bind9
+
+COPY bind_master/rndc.key /etc/bind/rndc.key
+COPY common /etc/bind/common
+COPY bind_master/zones/ /var/bind/
+COPY bind_master/named.conf /etc/bind/named.conf
+
+RUN named-checkconf \
+  && named-checkzone sun.galaxy /var/bind/sun.galaxy.zone \
+  && named-checkzone 20.172.in-addr.arpa /var/bind/172.20.rev.zone

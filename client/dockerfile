@@ -1,0 +1,11 @@
+FROM resystit/bind9
+
+# install dig and nano
+RUN apk --update add bind-tools nano \
+  && echo "+nocmd +nostats +nocomments" > ~/.digrc
+
+COPY client/rndc.conf /etc/bind/
+
+CMD ["/bin/sh"]
+
+

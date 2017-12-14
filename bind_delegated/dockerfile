@@ -1,0 +1,8 @@
+FROM resystit/bind9
+
+COPY common /etc/bind/common
+COPY bind_delegated/zones/ /var/bind/
+COPY bind_delegated/named.conf /etc/bind/named.conf
+
+RUN named-checkconf \
+  && named-checkzone sun.galaxy /var/bind/sun.galaxy.zone

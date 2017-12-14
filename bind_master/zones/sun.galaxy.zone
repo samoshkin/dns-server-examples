@@ -1,0 +1,45 @@
+$TTL 300
+$ORIGIN sun.galaxy.
+
+@  1D  IN  SOA sun.galaxy. god.sun.galaxy. (
+  1; serial
+  3H; refresh interval
+  1m; retry 
+  10m; expiry period
+  5m; negative TTL
+)
+
+@    IN  NS  ns1.sun.galaxy.
+     IN  NS  ns2.sun.galaxy.
+
+@       IN  A  172.20.0.20
+
+ns1    IN  A   172.20.0.110
+ns2    IN  A   172.20.0.111
+
+earth    IN  A  172.20.0.20
+mars    IN  A  172.20.0.22
+venus    IN  A  172.20.0.24
+
+; example of DNS load balancing
+souyz    IN   A  172.20.0.26
+souyz    IN   A  172.20.0.27
+souyz    IN   A  172.20.0.28
+souyz    IN   A  172.20.0.29
+
+moon    IN  CNAME  earth
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

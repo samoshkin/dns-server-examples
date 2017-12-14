@@ -1,0 +1,88 @@
+version: '2'
+
+services:
+
+  client:
+    build:
+      context: .
+      dockerfile: ./client/dockerfile
+    networks:
+      default:
+        ipv4_address: 172.20.0.2
+  
+  master:
+    build:
+      context: .
+      dockerfile: ./bind_master/dockerfile
+    networks:
+      default:
+        ipv4_address: 172.20.0.110
+
+  slave:
+    build:
+      context: .
+      dockerfile: ./bind_slave/dockerfile
+    networks:
+      default:
+        ipv4_address: 172.20.0.111
+
+  forwarding:
+    build:
+      context: .
+      dockerfile: ./bind_forwarding/dockerfile
+    networks:
+      default:
+        ipv4_address: 172.20.0.112
+
+  caching:
+    build:
+      context: .
+      dockerfile: ./bind_caching/dockerfile
+    networks:
+      default:
+        ipv4_address: 172.20.0.113
+
+  views:
+    build:
+      context: .
+      dockerfile: ./bind_views/dockerfile
+    ports:
+      - "53:53/udp"
+      - "53:53/tcp"
+    networks:
+      default:
+        ipv4_address: 172.20.0.114
+
+  delegated:
+    build:
+      context: .
+      dockerfile: ./bind_delegated/dockerfile
+    networks:
+      default:
+        ipv4_address: 172.20.0.115
+
+  delegated_subzone:
+    build:
+      context: .
+      dockerfile: ./bind_delegated_subzone/dockerfile
+    networks:
+      default:
+        ipv4_address: 172.20.0.116
+
+  split_horizon:
+    build:
+      context: .
+      dockerfile: ./bind_split_horizon/dockerfile
+    networks:
+      default:
+        ipv4_address: 172.20.0.117
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/16
+          ip_range: 172.20.0.112/28
+          gateway: 172.20.0.1

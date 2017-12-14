@@ -1,0 +1,11 @@
+FROM resystit/bind9
+
+COPY common /etc/bind/common
+COPY bind_split_horizon/zones/ /var/bind/
+COPY bind_split_horizon/named.conf /etc/bind/named.conf
+
+RUN named-checkconf \
+  && named-checkzone sun.galaxy /var/bind/humans.sun.galaxy.zone \
+  && named-checkzone sun.galaxy /var/bind/aliens.sun.galaxy.zone \
+  && named-checkzone sun.galaxy /var/bind/sun.galaxy.zone
+  

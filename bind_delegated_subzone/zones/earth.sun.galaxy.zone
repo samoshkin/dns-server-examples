@@ -1,0 +1,50 @@
+$TTL 300
+$ORIGIN earth.sun.galaxy.
+
+@  1D  IN  SOA earth.sun.galaxy. chucknorris.earth.sun.galaxy. (
+  1; serial
+  3H; refresh interval
+  1m; retry 
+  10m; expiry period
+  5m; negative TTL
+)
+
+@    IN  NS  ns1.earth.sun.galaxy.
+@    IN  NS  ns1.sun.galaxy.
+
+ns1    IN  A   172.20.0.116
+
+; glue record
+ns1.sun.galaxy.  IN  A 172.20.0.115
+
+@           IN  A  172.20.0.30
+asia        IN  A  172.20.0.32
+america     IN  A  172.20.0.33
+africa      IN  A  172.20.0.34
+australia   IN  A  172.20.0.35
+antarctica  IN  A  172.20.0.36
+
+; virtual subdomain
+$ORIGIN europe.earth.sun.galaxy.
+@         IN   A   172.20.0.51
+ua        IN   A   172.20.0.52
+ru        IN   A   172.20.0.53
+de        IN   A   172.20.0.54
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
