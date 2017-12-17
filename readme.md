@@ -11,8 +11,8 @@ Overview
 DNS servers implementations:
 
 - BIND9
+- dnsmasq
 - unbound (TBD)
-- dnsmasq (TBD)
 - NSD (TBD)
 
 Server configurations/roles:
@@ -64,7 +64,7 @@ docker-compose run client
 Once you're done, just clean up everything (containers/networks/images):
 
 ```
-docker-compose down --rmi -v
+docker-compose down --rmi all -v
 ```
 
 Domain name hierarchy

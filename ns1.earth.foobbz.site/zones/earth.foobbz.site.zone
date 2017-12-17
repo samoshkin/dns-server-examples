@@ -1,0 +1,38 @@
+$TTL 300
+$ORIGIN earth.foobbz.site.
+
+@  1800  IN  SOA earth.foobbz.site. god.earth.foobbz.site. (
+  1; serial
+  1H; refresh interval
+  5m; retry 
+  1H; expiry period
+  5m; negative TTL
+)
+
+; primary NS server hosted by digitalocean
+@    IN  NS  ns1.earth.foobbz.site.
+
+; three secondary servers provided by BuddyNS
+@    IN  NS  j.ns.buddyns.com.
+@    IN  NS  e.ns.buddyns.com.
+@    IN  NS  k.ns.buddyns.com.
+
+@    IN  A    188.166.148.182
+*    IN   A   188.166.148.182
+
+; glue record for onw nameserver
+ns1    IN  A   188.166.148.182
+
+
+
+
+
+
+
+
+
+
+
+
+
+

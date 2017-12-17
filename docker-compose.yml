@@ -77,6 +77,16 @@ services:
       default:
         ipv4_address: 172.20.0.117
 
+  dnsmasq:
+    build:
+      context: .
+      dockerfile: ./dnsmasq/dockerfile
+    networks:
+      default:
+        ipv4_address: 172.20.0.118
+    cap_add:
+      - NET_ADMIN
+
 networks:
   default:
     driver: bridge

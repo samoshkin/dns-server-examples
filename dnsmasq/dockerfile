@@ -1,0 +1,6 @@
+FROM andyshinn/dnsmasq
+
+COPY dnsmasq/hosts /etc/dnsmasq.hosts
+COPY dnsmasq/dnsmasq.conf /etc/dnsmasq.conf
+
+CMD ["--log-facility", "-"]

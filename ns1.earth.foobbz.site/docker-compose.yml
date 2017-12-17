@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  ns1:
+    build: .
+    image: ns1_earth_foobbz_site
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "953:953/tcp"
+    
+

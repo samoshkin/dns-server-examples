@@ -1,0 +1,7 @@
+FROM resystit/bind9
+
+COPY zones/ /var/bind/
+COPY named.conf /etc/bind/named.conf
+
+RUN named-checkconf \
+  && named-checkzone earth.foobbz.site /var/bind/earth.foobbz.site.zone
